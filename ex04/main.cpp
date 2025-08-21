@@ -13,14 +13,15 @@
 #include "Sed.hpp"
 
 int	main(int ac, char **av){
-	std::ifstream	ifs(av[1]);
-	std::ofstream	ofs("popo");
-	std::string line;
-
 	if (ac != 4){
 		std::cerr << "Invalid number of argument" << std::endl;
 		return (1);
 	}
+	std::ifstream	ifs(av[1]);
+	std::string		path = av[1];
+	path += ".replace";
+ 	std::ofstream	ofs(path.c_str());
+	std::string line;
 
 	if (!ifs || !ofs){
 		std::cerr << "Erreur ouverture fichiers\n";
