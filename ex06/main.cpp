@@ -14,8 +14,8 @@
 
 int	main(int ac, char **av){
 	if (ac != 2){
-		std::cerr << "Wrong number of arguments" << std::endl;
-		return (1);
+		std::cout << "I am not sure how tired I am today...\n" << "[ Probably complaining about insignificant problems ]" << std::endl;
+		return(0);
 	}
 	Harl harl;
 	harl.complain(av[1]);

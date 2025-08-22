@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdeliere <vdeliere@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-08-21 13:49:18 by vdeliere          #+#    #+#             */
-/*   Updated: 2025-08-21 13:49:18 by vdeliere         ###   ########.fr       */
+/*   Created: 2025-08-21 13:49:31 by vdeliere          #+#    #+#             */
+/*   Updated: 2025-08-21 13:49:31 by vdeliere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-int	main(int ac, char **av){
-	if (ac != 2){
-		std::cerr << "Wrong number of arguments" << std::endl;
-		return (1);
-	}
-	Harl harl;
-	harl.complain(av[1]);
-	return (0);
-}
+#  include <string>
+#  include <iostream>
+
+class	Harl{
+
+	public :
+		Harl(void);
+		~Harl(void);
+		void	complain( std::string level );
+
+	private :
+		void	debug( void );
+		void	info( void );
+		void	warning( void );
+		void	error( void );
+};
+
+#endif
