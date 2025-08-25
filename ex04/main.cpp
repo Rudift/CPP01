@@ -20,13 +20,15 @@ int	main(int ac, char **av){
 	std::ifstream	ifs(av[1]);
 	std::string		path = av[1];
 	path += ".replace";
- 	std::ofstream	ofs(path.c_str());
 	std::string line;
 
-	if (!ifs || !ofs){
+	if (!ifs){
 		std::cerr << "Erreur ouverture fichiers\n";
 		return 1;
 	}
+	
+	std::ofstream	ofs(path.c_str());
+
 	while (std::getline(ifs, line)){
 		std::string	replaced = sed_replace(line, av[2], av[3]);
 		ofs << replaced << "\n";
